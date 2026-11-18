@@ -1,0 +1,28 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 阶段完成动画：填充 + 轻微缩放（播放一次） */
+@keyframes ring-complete {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-ring-complete {
+  animation: ring-complete 0.6s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ring-complete {
+    animation: none;
+  }
+}

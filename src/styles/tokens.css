@@ -1,0 +1,63 @@
+:root {
+  /* 三套模式主色（PRD 4.2） */
+  --color-focus: #ef4444;
+  --color-focus-hover: #dc2626;
+  --color-short-break: #10b981;
+  --color-long-break: #3b82f6;
+
+  /* 背景 / 卡片 / 文本 / 边框 */
+  --color-bg: #f8fafc;
+  --color-bg-dark: #0f172a;
+  --color-card: #ffffff;
+  --color-card-dark: #1e293b;
+  --color-text: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-border: #e2e8f0;
+
+  /* 圆角：控件 8px / 卡片与模态 12px */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+
+  /* 阴影 */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-primary: 0 4px 12px rgba(239, 68, 68, 0.28);
+
+  /* 倒计时数字：桌面 96–128px 取上限，移动端 64px */
+  --font-size-timer: 128px;
+  --font-size-timer-mobile: 64px;
+
+  /* 当前模式主色（App 按 phase 覆盖） */
+  --color-primary: #ef4444;
+  --color-primary-hover: #dc2626;
+}
+
+/* 暗色主题（App 按 settings.theme 设置 data-theme） */
+[data-theme='dark'] {
+  --color-bg: #0f172a;
+  --color-bg-dark: #020617;
+  --color-card: #1e293b;
+  --color-card-dark: #0f172a;
+  --color-text: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-border: #334155;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-bg: #0f172a;
+    --color-bg-dark: #020617;
+    --color-card: #1e293b;
+    --color-card-dark: #0f172a;
+    --color-text: #f1f5f9;
+    --color-text-secondary: #94a3b8;
+    --color-border: #334155;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --font-size-timer: var(--font-size-timer-mobile);
+  }
+}

@@ -1,0 +1,5 @@
+dist/
+node_modules/
+package-lock.json
+coverage/
+开发需要的文档/
